@@ -1,0 +1,68 @@
+label{
+    min-width: 150px
+  }
+
+  .custom-close-button {
+      position: relative;
+    }
+
+    .custom-close-button button {
+      position: absolute;
+      top: 28px;
+      left: 86%;
+    }
+
+    .patient-dialog{
+      border-bottom: 3px solid #ccc;
+    }
+
+    .error-message {
+      color: red;
+    }
+
+    label {
+      min-width: 150px;
+    }
+
+    /* Center the buttons */
+    .text-center {
+      text-align: center;
+    }
+
+    /* Adjust form field width */
+    .mat-form-field {
+      width: 100%;
+    }
+
+    /* Add some spacing between form elements */
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    /* Make buttons more compact */
+    .btn {
+      padding: 10px 20px;
+    }
+    
+
+    .flip-card-back .personal-info {
+      grid-column: 2 / span 9;
+      grid-row: 2 / span 9;
+      text-align: left;
+    }
+    
+    .flip-card-back .personal-info p {
+      font-size: 10px;
+    }
+    
+    .flip-card-back .personal-info p:first-of-type {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .flip-card-back .personal-info p:nth-of-type(2) {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }

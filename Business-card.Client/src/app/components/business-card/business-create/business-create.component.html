@@ -1,0 +1,91 @@
+<div class="container mt-5">  
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="card shadow-lg">
+      <div class="card-header text-center bg-primary text-white">
+        <h3 class="mb-0">Add New Business Card</h3>
+      </div>
+
+      <div class="card-body">
+        <div class="row g-3">
+          <!-- Name -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="appointmentName" class="form-label">Name <span class="text-danger">*</span></label>
+              <input required formControlName="businessCard_Name" type="text" class="form-control" id="appointmentName" placeholder="Enter full name" />
+              <div *ngIf="form.get('Name')?.invalid && form.get('Name')?.touched" class="text-danger">
+                Name is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="patientPhoneNumber" class="form-label">Phone Number</label>
+              <input formControlName="businessCard_PhoneNumber" type="tel" class="form-control" id="patientPhoneNumber" placeholder="Enter phone number" />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input formControlName="businessCard_Email" type="email" class="form-control" id="email" placeholder="Enter email" />
+            </div>
+          </div>
+
+          <!-- Birthday -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Birthdate" class="form-label">Birthday <span class="text-danger">*</span></label>
+              <input required formControlName="businessCard_Date_Of_Birth" type="date" class="form-control" id="Birthdate" />
+              <div *ngIf="form.get('Birthdate')?.invalid && form.get('Birthdate')?.touched" class="text-danger">
+                Birthday is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
+              <select required formControlName="businessCard_Gender" class="form-control" id="gender">
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <div *ngIf="form.get('gender')?.invalid && form.get('gender')?.touched" class="text-danger">
+                Gender is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Address" class="form-label">Address</label>
+              <input formControlName="businessCard_Address" type="text" class="form-control" id="Address" placeholder="Enter address" />
+            </div>
+          </div>
+
+          <!-- Image Upload -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="photo" class="form-label">Upload Photo</label>
+              <input type="file" class="form-control" (change)="onFileChange($event)" id="photo" accept="image/*" />
+            </div>
+
+            <!-- Preview Uploaded Image -->
+            <div *ngIf="imgURL">
+              <img [src]="imgURL" class="img-thumbnail mt-3" alt="Uploaded Image" style="max-width: 200px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer text-center">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </form>
+</div>
